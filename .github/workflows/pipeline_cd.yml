@@ -1,0 +1,15 @@
+name: CD - Production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Simular Deploy
+        run: echo "Deploy Realizado com Sucesso!"
