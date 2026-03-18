@@ -4,6 +4,21 @@ on:
     branches: [main]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Baixar artefato
+        uses: actions/download-artifact@v4
+
+        with:
+          name: app-build
+
+      - name: Simular deploy
+        run: echo "Deploy Realizado com Sucesso!"
+
+
   test:
     runs-on: ubuntu-latest
     steps:
