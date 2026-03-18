@@ -1,4 +1,5 @@
 name: CD Demo
+
 on:
   push:
     branches: [main]
@@ -6,14 +7,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
 
       - name: Instalar Node
         uses: actions/setup-node@v4
-
         with:
           node-version: 24
 
@@ -21,24 +21,23 @@ jobs:
         run: npm install
 
       - name: Gerar artefato
-        run: zip -r app.zip
+        run: zip -r app.zip .
 
       - name: Publicar artefato
         uses: actions/upload-artifact@v4
-
         with:
           name: app-build
           path: app.zip
 
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Código
         uses: actions/checkout@v4
 
       - name: Instalar Node
         uses: actions/setup-node@v4
-
         with:
           node-version: 24
 
@@ -49,7 +48,6 @@ jobs:
         run: npm test
 
   deploy:
-
     runs-on: ubuntu-latest
     needs: test
 
