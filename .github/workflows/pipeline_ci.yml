@@ -1,5 +1,12 @@
 name: CI - Development
 
+on:
+  push:
+    branches: [ dev ]
+    
+  pull_request:
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
