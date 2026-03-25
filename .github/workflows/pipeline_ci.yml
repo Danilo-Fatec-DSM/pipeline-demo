@@ -47,7 +47,7 @@ jobs:
             -Dsonar.projectKey=Danilo-Fatec-DSM_pipeline-demo
             -Dsonar.organization=danilo-fatec-dsm
         env:
-          SONAR_TOKEN: 1234 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   build:
     runs-on: ubuntu-latest
