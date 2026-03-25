@@ -18,7 +18,7 @@ jobs:
 
   quality:
     runs-on: ubuntu-latest
-    nededs: security
+    needs: security
   
     steps:
       - name: Checkout código
