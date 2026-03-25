@@ -6,7 +6,7 @@
 
 function soma(a, b) {
  let resultado = a + b;
- let x = 10;
+//  let x = 10;
  return resultado;
 }
 
